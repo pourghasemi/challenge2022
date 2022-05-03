@@ -1,6 +1,7 @@
+const baseUrl="https://challenge2022.herokuapp.com/api/data";
 export default {
   fetchData({ commit }) {
-    return fetch("http://localhost:3000/data")
+    return fetch(baseUrl)
       .then((res) => res.json())
       .then((data) => {
         commit("setTabs", data.tabs);
@@ -11,7 +12,7 @@ export default {
   },
 
   postData({ commit }, { data }) {
-    return fetch("http://localhost:3000/data", {
+    return fetch(baseUrl, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
