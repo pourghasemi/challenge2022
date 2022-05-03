@@ -22,7 +22,7 @@ export default {
 
   data() {
     return {
-      pageTitle: this.$route.params.tab,
+      pageTitle: this.$route.params.tab || this.tabs[0],
       pluginList: [],
       activePlugins: [],
       disabledPlugins: [],
