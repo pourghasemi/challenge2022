@@ -22,7 +22,7 @@ export default {
 
   data() {
     return {
-      pageTitle: this.$route.params.tab || this.tabs[0],
+      pageTitle: this.$route.params.tab ,
       pluginList: [],
       activePlugins: [],
       disabledPlugins: [],
@@ -76,6 +76,7 @@ export default {
       this.updateData();
     },
     tabdata() {
+      if(!tabSelected)tabSelected=this.tabs[0];
       this.updateData();
     },
   },
